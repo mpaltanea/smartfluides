@@ -1,0 +1,44 @@
+# spring params
+spring:
+  application:
+    name: worker
+  cloud:
+    zookeeper:
+      connect-string: 10.185.22.17:2181
+  batch:
+    job:
+      names: none
+
+# embedded server params
+server:
+  port: ${port}
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+# logging params
+logging:
+  file: application.log
+  level:
+
+    org.apache.zookeeper.ClientCnxn: WARN
+
+# auth params
+auth:
+  server:
+    check_token_url: http://localhost:8088/oauth/check_token/
+
+# mongo params
+mongo:
+  server:
+    host: 127.0.0.1
+    port: 27017
+
+# shared location for files to be imported
+import:
+  basedir: \\P5RO-PORT652\import

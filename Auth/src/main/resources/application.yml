@@ -1,0 +1,25 @@
+# spring params
+spring:
+  application:
+    name: auth
+  cloud:
+    zookeeper:
+      connect-string: 10.185.22.17:2181
+
+# embedded server params
+server:
+  port: ${port}
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+# logging params
+logging:
+  file: application.log
+  level:
+    org.apache.zookeeper.ClientCnxn: WARN

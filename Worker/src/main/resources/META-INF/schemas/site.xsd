@@ -1,0 +1,37 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:smartf="http://fr.osb.smartf.agent/worker/schema/site"
+           targetNamespace="http://fr.osb.smartf.agent/worker/schema/site"
+           elementFormDefault="qualified">
+
+    <xs:complexType name="SiteInput">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="town" type="xs:string" />
+            <xs:element name="address" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Response">
+        <xs:sequence>
+            <xs:element name="message" type="xs:string" />
+            <xs:element name="code" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="insertSiteRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="site" type="smartf:SiteInput" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="insertSiteResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="response" type="smartf:Response" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
